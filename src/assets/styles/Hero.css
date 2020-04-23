@@ -1,0 +1,18 @@
+.hero {
+    margin: 10px;
+    width: 20rem;
+    box-shadow: 8px 14px 38px rgba(39, 44, 49, .06), 1px 3px 8px rgba(39, 44, 49, .03);
+    transition: all .5s ease;
+}
+
+.hero:hover {
+    transform: translate3D(0, -1px, 0) scale(1.03);
+    transition: all .4s ease;
+    cursor: pointer;
+    box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);
+}
+
+.hero img {
+    min-height: 338px;
+    max-height: 338px;
+}

@@ -1,0 +1,23 @@
+.row {
+    width: 100%;
+}
+
+.heroDetails img {
+    width: 100%;
+}
+
+.hero_image {
+    max-width: 450px;
+    padding: 0;
+    margin: 0;
+}
+
+.comic_image {
+    max-width: 450px;
+    padding: 0;
+    margin: 0;
+}
+
+.comic_image img {
+    width: 100%;
+}
