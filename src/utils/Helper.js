@@ -1,7 +1,7 @@
-import { getURL } from './Config'
+import { getURL } from './Config.js'
 
 export const getHeroes = async () => {
-    let URL = getURL('characters')
+    let URL = await getURL('characters')
     const heroes = await fetch(URL).then(res => res.json())
         .then(data => data.data.results)
     return heroes
