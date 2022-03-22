@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Row, Col, Container } from 'reactstrap'
 import { Loader } from '../components/Loader'
-import { getComic } from '../utils/Helper'
+import { getComic } from '../services'
 import ImageAnimated from '../components/ImageAnimated'
 import InfoComic from '../components/InfoComic'
 // import Image from 'react-bootstrap/Image'

@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
-import { getHero } from '../services'
+import { getSerie } from '../services'
 import { Loader } from '../components/Loader'
 import { Row, Col, Container } from 'reactstrap'
 import '../assets/styles/Details.css'
 import ImageAnimated from '../components/ImageAnimated'
-import InfoHero from '../components/InfoHero'
+import InfoSerie from '../components/InfoSerie'
 
-const HeroDetails = (props) => {
-    const [hero, setHero] = useState({})
+const SerieDetails = (props) => {
+    const [serie, setSerie] = useState({})
     const { id } = props.match.params
 
     useEffect(() => {
         const fetchData = async id => {
-            const hero = await getHero(id)
-            setHero(hero[0])
+            const serie = await getSerie(id)
+            setSerie(serie[0])
         }
         fetchData(id)
     }, [id])
 
-    const { thumbnail, name } = hero
-    if (name === undefined) return <Loader />
+    const { thumbnail, title } = serie
+    if (title === undefined) return <Loader />
     
     return (
         <div className='heroDetails'>
@@ -28,11 +28,10 @@ const HeroDetails = (props) => {
                     <Col>
                         <div className="hero_image">
                             <ImageAnimated thumbnail={thumbnail} />
-                            {/* <Image src={`${path}.${extension}`} /> */}
                         </div>
                     </Col>
                     <Col className='align-self-center'>
-                        <InfoHero {...hero} />
+                        <InfoSerie {...serie} />
                     </Col>
                 </Row>
             </Container>
@@ -40,6 +39,6 @@ const HeroDetails = (props) => {
     )
 }
 
-export default HeroDetails;
+export default SerieDetails;
 
 

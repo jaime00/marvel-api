@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function InfoHero(hero) {
-    console.log(hero);
     const { modified, description, name } = hero
     return (
         <>

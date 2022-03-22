@@ -1,7 +1,7 @@
-import { getURL } from './Config.js'
+import { getURL } from '../utils/Config'
 
 export const getHeroes = async () => {
-    let URL = await getURL('characters')
+    let URL = getURL('characters')
     const heroes = await fetch(URL).then(res => res.json())
         .then(data => data.data.results)
     return heroes
@@ -12,6 +12,13 @@ export const getComics = async () => {
     const comics = await fetch(URL).then(res => res.json())
         .then(data => data.data.results)
     return comics
+}
+
+export const getSeries = async () => {
+    let URL = getURL('series')
+    const series = await fetch(URL).then(res => res.json())
+        .then(data => data.data.results)
+    return series
 }
 
 export const getHero = async (id) => {
@@ -30,6 +37,15 @@ export const getComic = async (id) => {
             return data.data.results
         })
     return comic
+}
+
+export const getSerie = async (id) => {
+    let URL = getURL(`series/${id}`)
+    const serie = await fetch(URL).then(res => res.json())
+        .then(data => {
+            return data.data.results
+        })
+    return serie
 }
 
 

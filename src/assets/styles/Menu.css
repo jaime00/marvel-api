@@ -26,7 +26,7 @@ nav {
 nav ul {
     list-style: none;
     text-align: center;
-    margin: 0px 0px;
+    margin: 5px 0px;
     padding: 0;
 }
 
@@ -35,13 +35,16 @@ nav ul li {
 }
 
 nav ul li a {
+    width: 140px;
     display: block;
     padding: 15px;
     text-decoration: none;
     color: #aaa;
     font-weight: 800;
     text-transform: uppercase;
-    margin: 0 10px;
+    margin: 0 5px;
+    max-height: 50px;
+    border-radius: 0.4rem;
 }
 
 nav ul li a,
@@ -65,7 +68,18 @@ nav.shift ul li a:hover {
     color: white;
 }
 
-nav.shift ul li a:after {
+.shift-item.active{
+    background-color: #F01620;
+    color: white;
+}
+.shift-item.active:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    background-color: #F01620;
+}
+
+nav.shift ul li a:after{
     display: block;
     position: absolute;
     top: 0;
@@ -87,4 +101,5 @@ nav.shift ul li a:hover:after {
     opacity: 1;
     visibility: visible;
     height: 100%;
+    border-radius: 0.4rem;
 }

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Hero from './Hero'
-import Main from './Main'
 import { Loader } from './Loader'
-import { getHeroes } from '../utils/Helper'
-import { Spring, Trail } from 'react-spring/renderprops'
+import { getHeroes } from '../services'
+import { Trail } from 'react-spring/renderprops'
 
 export const Heroes = () => {
     const [heroes, setHeroes] = useState([]);
@@ -17,14 +16,8 @@ export const Heroes = () => {
     }, [])
     return (
         <>
-            <Spring
-                from={{ marginLeft: 1000 }}
-                to={{ marginLeft: 0 }}
-            >
-                {props => <Main style={props} />}
-            </Spring>
-            {(heroes.length === 0) && <Loader />}
             <div className='heroes d-flex flex-wrap justify-content-center mt-5' >
+                {(heroes.length === 0) && <Loader />}
                 <Trail
                     items={heroes}
                     keys={hero => hero.id}

@@ -1,0 +1,21 @@
+.serie {
+    margin: 10px;
+    max-width: 250px;
+    text-align: center;
+    transition: all .4s ease;
+    font-weight: bold;
+}
+
+.serie:hover {
+    transform: translate3D(0, -1px, 0) scale(1.03);
+    cursor: pointer;
+    color: red;
+    transition: all .4s ease;
+}
+
+.serie img {
+    transition: all .5s ease;
+    width: 100%;
+    min-height: 345px;
+    max-height: 345px;
+}
